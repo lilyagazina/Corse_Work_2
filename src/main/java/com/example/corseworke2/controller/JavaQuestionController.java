@@ -17,15 +17,19 @@ public class JavaQuestionController {
     public JavaQuestionController(JavaQuestionService javaQuestionService) {
         this.javaQuestionService = javaQuestionService;
     }
+
     @GetMapping(path = "/add")
-    public Question addQuestion(@RequestParam("question") String question,@RequestParam("answer") String answer){
-        return null;
+    public Question addQuestion(@RequestParam("question") String question, @RequestParam("answer") String answer) {
+        return javaQuestionService.add(question, answer);
     }
+
     @GetMapping(path = "/remove")
-    public Question removeQuestion (@RequestParam("question") String question,@RequestParam("answer") String answer){
-        return null;
+    public Question removeQuestion(@RequestParam("question") String question, @RequestParam("answer") String answer) {
+        return javaQuestionService.remove(question, answer);
     }
-    public Collection<Question> getQuestion(){
-        return null;
+
+    @GetMapping
+    public Collection<Question> getQuestion() {
+        return javaQuestionService.getAll();
     }
 }

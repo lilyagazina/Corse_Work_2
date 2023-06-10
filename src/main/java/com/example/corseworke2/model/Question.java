@@ -3,8 +3,8 @@ package com.example.corseworke2.model;
 import java.util.Objects;
 
 public class Question {
-    private String question; //вопрос
-    private String answer; //ответ
+    private final String question; //вопрос
+    private final String answer; //ответ
 
     public Question(String question, String answer) {
         this.question = question;
